@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>RxLOCUMS</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="./img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+   
+
+<!-- Favicon -->
+<link href="{% static 'rxApp/img/favicon.ico' %}" rel="icon">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="{% static 'rxApp/css/bootstrap.min.css' %}" rel="stylesheet">
+
+<!-- Template Stylesheet -->
+<link href="{% static 'rxApp/css/style.css' %}" rel="stylesheet">
+
+<!-- JavaScript -->
+<script src="{% static 'rxApp/js/script.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- Cursor -->
+<style>
+    body {
+        cursor: url('{% static "rxApp/img/download.png" %}'), auto !important;
+    }
+    .search-container {
+        margin-top: 10px;
+    }
+</style>
+
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+
+    <!-- Hero Start -->
+    <div class="container-fluid  py-5 mb-5 hero-header">
+        <div class="background-image-hero-section"></div>
+        <div class="container py-5">
+            <div class="row justify-content-start">
+                <div class="col-lg-8 text-center text-lg-start">
+                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5 opacity-100"
+                        style="border-color: rgba(256, 256, 256) !important; ">Welcome To RxLOCUMS</h5>
+                    <h1 style="font-weight: 400;" class="display-4  text-white mb-md-4">Empowering Medical Professionals, Strengthening Hospitals, Shaping a Brighter Future in Healthcare.</h1>
+                    <div class="pt-2">
+                        <a href="{% url 'hospitals' %}" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Hospitals</a>
+                        <a href="{% url 'physicians' %}" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Physicians</a>
+                        <a href="{% url 'nurses' %}" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Nurses</a>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 300px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded" src="{% static 'rxApp/img/Images/homepageimage1.jpeg' %}"
+                            style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="mb-4">
+                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">About Us</h5>
+                        <h4 style="font-weight: 400;" style="font-weight: 400;" class="display-8">Empowering Healthcare
+                            Professionals</h4>
+                    </div>
+                    <p style="font-size: large;">RxLOCUMS is a physician-owned locum tenens staffing agency specializing in the placement of physicians, advanced practice providers, and nurses in hospital-based specialties nationwide. Our team of staffing experts are here to seamlessly connect skilled healthcare professionals with hospitals and medical facilities nationwide. Furthermore, in this competitive industry, RxLOCUMS strives to be the bridge that transforms staffing challenges into opportunities both for the healthcare facilities and the clinicians that we work with.
+                    </p>
+                    <div class="row g-3 pt-3">
+                        <!-- Hospital Card -->
+                        <div class="col-sm-3 col-6">
+                            <a href="{% url 'hospitals' %}" class="text-decoration-none">
+                                <div class="bg-light text-center rounded-circle py-4">
+                                    <i class="fa fa-3x fa-hospital text-primary mb-3"></i>
+                                    <h6 class="mb-0">Hospital<small class="d-block text-primary">Services</small></h6>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Physician Card -->
+                        <div class="col-sm-3 col-6">
+                            <a href="{% url 'physicians' %}" class="text-decoration-none">
+                                <div class="bg-light text-center rounded-circle py-4">
+                                    <i class="fa fa-3x fa-user-md text-primary mb-3"></i>
+                                    <h6 class="mb-0">Physician<small class="d-block text-primary">Services</small></h6>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Nurse Card -->
+                        <div class="col-sm-3 col-6">
+                            <a href="{% url 'nurses' %}" class="text-decoration-none">
+                                <div class="bg-light text-center rounded-circle py-4">
+                                    <i class="fa fa-3x fa-user-nurse text-primary mb-3"></i>
+                                    <h6 class="mb-0">Nurse<small class="d-block text-primary">Services</small></h6>
+                                </div>
+                            </a>
+                        </div>
+
+                       
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Services Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Services</h5>
+                <h3 style="font-weight: 400;" class="display-8">RxLOCUMS for Hospitals , Physicians & Nurses</h3>
+            </div>
+            <div class="row g-5">
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon mb-4">
+                            <img src="{% static 'rxApp/img/Tailoredopportunities.jpeg' %}" alt="Tailoredopportunities" width="100"
+                                height="100">
+                        </div>
+                        <h4 style="font-weight: 400;" class="mb-3">Tailored Services</h4>
+                        <p class="m-0"> RxLOCUMS values the relationships that we build with both the clinicians and the clients that we partner with. Therefore, we are committed to exceeding the expectations of both our clients and healthcare clinicians by delivering personalized solutions tailored to their unique needs.</p>
+                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon mb-4">
+                            <!-- <i class="fa fa-2x fa-cogs text-black"></i> -->
+                            <img src="{% static 'rxApp/img/Streamlinedprocess.jpeg' %}" alt="Tailoredopportunities" width="100" height="100">
+                        </div>
+                        <h4 style="font-weight: 400;" class="mb-3">Streamlined Process</h4>
+                        <p class="m-0"> RxLOCUMS ensures a hassle-free experience for both physicians and
+                            hospitals through its straightforward process.</p>
+                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon mb-4">
+                            <img src="{% static 'rxApp/img/QualityAssurance.jpeg' %}" alt="Tailoredopportunities" width="100" height="100">
+                        </div>
+                        <h4 style="font-weight: 400;" class="mb-3">Quality Assurance</h4>
+                        <p class="m-0">Prioritizing quality over quantity, RxLOCUMS ensures that every connection
+                            meets the unique needs and standards of both physicians and hospitals.</p>
+                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon mb-4">
+                            <!-- <i class="fa fa-2x fa-id-card text-black"></i> -->
+                            <img src="{% static 'rxApp/img/Personalizedassisstant_support.jpeg' %}" alt="Tailoredopportunities" width="100"
+                                height="100">
+                        </div>
+                        <h4 style="font-weight: 400;" class="mb-3">Credentialing, Fast-Tracked</h4>
+                        <p class="m-0">We've streamlined the credentialing and licensing process, making it quicker and
+                            simpler, so you can start making a difference without delay.</p>
+                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon mb-4">
+                            <!-- <i class="fa fa-2x fa-leaf text-black"></i> -->
+                            <img src="{% static 'rxApp/img/Growwithus.jpeg' %}" alt="Tailoredopportunities" width="100" height="100">
+                        </div>
+                        <h4 style="font-weight: 400;" class="mb-3">Grow with Us</h4>
+                        <p class="m-0">Continuous learning is at your fingertips. With our array of educational and
+                            development opportunities, your career growth never stops.</p>
+                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon mb-4">
+                            <!-- <i class="fa fa-2x fa-plane text-black"></i> -->
+                            <img src="{% static 'rxApp/img/Robustcompliance.jpeg' %}" alt="Tailoredopportunities" width="100" height="100">
+                        </div>
+                        <h4 style="font-weight: 400;" class="mb-3">Robust Compliance</h4>
+                        <p class="m-0">We understand that glitches happen, but we're always here, ready to resolve them
+                            quickly and efficiently. Because at RxLOCUMS, your uninterrupted service is our priority. We
+                            take patient data protection seriously, ensuring robust compliance and cybersecurity
+                            measures are always in place.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+
+  
+
+    {% include 'footer.html' %}
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <script>
+        // Get the current URL
+        var url = window.location.pathname;
+        
+        // Remove the trailing slash if there is one
+        if (url.endsWith('/')) {
+            url = url.slice(0, -1);
+        }
+        
+        // Get the last part of the URL (after the last slash)
+        var page = url.substr(url.lastIndexOf('/') + 1);
+        
+        // Map the last part of the URL to the corresponding link ID
+        var linkId;
+        switch (page) {
+            case '':
+                linkId = 'home-link';
+                break;
+            case 'hospitals':
+                linkId = 'hospitals-link';
+                break;
+            case 'physicians':
+                linkId = 'physicians-link';
+                break;
+            case 'nurses':
+                linkId = 'nurses-link';
+                break;
+                
+            case 'contact':
+                linkId = 'contact-link';
+                break;
+        }
+        
+        // Remove the 'active' class from all links
+        var navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(function(link) {
+            link.classList.remove('active');
+        });
+        
+        // Add the 'active' class to the corresponding link
+        if (linkId) {
+            document.getElementById(linkId).classList.add('active');
+        }
+        </script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  
+</body>
+
+
+</html>

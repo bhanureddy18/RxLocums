@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>RXLOCUMS</title>
+        {% load static %}
+     <!-- Favicon -->
+     <link href="{% static 'rxApp/img/favicon.ico' %}" rel="icon" />
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+        <!-- jQuery 2.1.3 -->
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    
+        <!-- DataTables -->
+        <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet" />
+        <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
+
+        <link href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css" rel="stylesheet" />
+        <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    
+        <!-- Bootstrap 3.3.2 -->
+        <link href="{% static 'rxApp/css/admin.css'%}" rel="stylesheet" type="text/css" />
+        {% comment %} dataTable {% endcomment %}
+    
+        <!-- FontAwesome 4.3.0 -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Ionicons 2.0.0 -->
+        <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    
+        <!-- Theme style -->
+        <link href="{% static 'rxApp/dist/css/AdminLTE.min.css'%}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'rxApp/dist/css/skins/_all-skins.min.css'%}" rel="stylesheet" type="text/css" />
+    
+        <!-- iCheck -->
+        <link href="{% static 'rxApp/plugins/iCheck/flat/blue.css'%}" rel="stylesheet" type="text/css" />
+    
+        <!-- Morris chart -->
+        <link href="{% static 'rxApp/plugins/morris/morris.css'%}" rel="stylesheet" type="text/css" />
+    
+        <!-- bootstrap wysihtml5 - text editor -->
+        <link href="{% static 'rxApp/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'%}" rel="stylesheet" type="text/css" />
+    </head>
+    <style>
+        table.dataTable {
+            width: 100%;
+            height: 60vh !important;
+            margin: 0 auto;
+            clear: both;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+    </style>
+  <body class="skin-blue">
+
+    <div class="wrapper">
+        {% include 'admin-navbar.html' %}
+        <!-- Left side column. contains the logo and sidebar -->
+        {% include 'admin-sidebar.html' %}
+  
+      <!-- Right side column. Contains the navbar and content of the page -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <div class="col-xs-12">
+             
+              <!-- /.box -->
+
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Physicians Data</h3>
+                </div>
+                <!-- /.box-header -->
+                <div  class="box-body table-responsive" >
+                  <table
+                    id="example1"
+                    class="table table-bordered table-striped "
+                  >
+                    <thead style="width:100%;">
+                      <tr>
+                        <th>Your Name</th>
+                        <th>Email Address</th>
+                        <th>Contact Number</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for Physician in physicians %}
+                      <tr>
+                        <td>{{ Physician.fullname }}</td>
+                        <td>{{ Physician.email }}</td>
+                        <td>{{ Physician.phone }}</td>
+                        <td>{{ Physician.address }}</td>
+                        <td>
+                          <a href="{% url 'admin_physician_detail' Physician.id%}" class="btn btn-primary">View</a>
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.box-body -->
+              </div>
+              <!-- /.box -->
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </section>
+        <!-- /.content -->
+      </div>
+
+
+  </body>
+  <!-- jQuery 2.1.3 -->
+<script src="{% static 'rxApp/plugins/jQuery/jQuery-2.1.3.min.js'%}" defer></script>
+<!-- jQuery UI 1.11.2 -->
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js" type="text/javascript" defer></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script defer>
+  $.widget.bridge("uibutton", $.ui.button);
+</script>
+<!-- Bootstrap 3.3.2 JS -->
+<script src="{% static 'rxApp/js/bootstrap.min.js'%}" type="text/javascript" defer></script>
+<!-- Morris.js charts -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js" defer></script>
+<script src="{% static 'rxApp/plugins/morris/morris.min.js'%}" type="text/javascript" defer></script>
+<!-- Sparkline -->
+<script src="{% static 'rxApp/plugins/sparkline/jquery.sparkline.min.js'%}" type="text/javascript" defer></script>
+<!-- jvectormap -->
+<script src="{% static 'rxApp/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'%}" type="text/javascript" defer></script>
+<script src="{% static 'rxApp/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'%}" type="text/javascript" defer></script>
+<!-- jQuery Knob Chart -->
+<script src="{% static 'rxApp/plugins/knob/jquery.knob.js'%}" type="text/javascript" defer></script>
+<!-- daterangepicker -->
+<script src="{% static 'rxApp/plugins/daterangepicker/daterangepicker.js'%}" type="text/javascript" defer></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{% static 'rxApp/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'%}" type="text/javascript" defer></script>
+<!-- iCheck -->
+<script src="{% static 'rxApp/plugins/iCheck/icheck.min.js'%}" type="text/javascript" defer></script>
+<!-- Slimscroll -->
+<script src="{% static 'rxApp/plugins/slimScroll/jquery.slimscroll.min.js'%}" type="text/javascript" defer></script>
+<!-- FastClick -->
+<script src="{% static 'rxApp/plugins/fastclick/fastclick.min.js'%}" defer></script>
+<!-- AdminLTE App -->
+<script src="{% static 'rxApp/dist/js/app.min.js'%}" type="text/javascript" defer></script>
+
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{% static 'rxApp/dist/js/pages/dashboard.js'%}" type="text/javascript" defer></script>
+
+<script src="{% static 'rxApp/plugins/datatables/jquery.dataTables.js'%}" defer></script>
+<script src="{% static 'rxApp/plugins/datatables/dataTables.bootstrap.js'%}" type="text/javascript" defer></script>
+
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'rxApp/dist/js/demo.js'%}" type="text/javascript" defer></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#example1').DataTable({
+            responsive: true
+        });
+    });
+</script>
+</html>

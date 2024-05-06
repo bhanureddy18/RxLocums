@@ -1,0 +1,157 @@
+{% load static %}
+<!-- Topbar Start -->
+<div class="container-fluid py-2 border-bottom d-none d-lg-block">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-md-12 d-flex align-items-center justify-content-end text-center gap-4 text-lg-end"
+      >
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#searchCollapse"
+          aria-expanded="false"
+          aria-controls="searchCollapse"
+        >
+          <i class="fa fa-search"></i>
+        </button>
+        <div class="collapse" id="searchCollapse">
+          <div
+            class="d-flex w-100 h-100 justify-content-center align-items-center"
+          >
+            <div class="search-container">
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="search-input"
+                  class="form-control"
+                  placeholder="Search..."
+                />
+                <button
+                  id="search-button"
+                  class="btn btn-primary"
+                  type="button"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% if request.user.is_authenticated %} {{ request.user.first_name }}
+        <a href="{% url 'logout_page'%}" class="btn btn-primary">logout</a>
+        {% else %}
+        <button class="btn btn-primary">
+          <a href="{% url 'login_page' %}" class="text-white">Login</a>
+        </button>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Topbar End -->
+<!-- Navbar Start -->
+<div class="container-fluid sticky-top bg-white shadow-sm">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+      <img
+        class="navbar-brand logo-design"
+        src="{% static 'rxApp/img/main-logo.png' %}"
+        alt="RxLOCUMS"
+      />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="hide-on-lg-devices container">
+          <div class="row">
+            <div
+              class="col-md-12 d-flex align-items-center justify-content-center text-center gap-4"
+            >
+              <div
+                class="d-flex w-100 h-100 justify-content-center align-items-center"
+              >
+                <div class="search-container">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      id="search-input"
+                      class="form-control"
+                      placeholder="Search..."
+                    />
+                    <button
+                      id="search-button"
+                      class="btn btn-primary"
+                      type="button"
+                    >
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-nav ms-auto py-0">
+          <a id="home-link" href="{% url 'home' %}" class="nav-item nav-link"
+            >Home</a
+          >
+          <a
+            id="hospitals-link"
+            href="{% url 'hospitals' %}"
+            class="nav-item nav-link"
+            >Hospitals</a
+          >
+          <a
+            id="physicians-link"
+            href="{% url 'physicians' %}"
+            class="nav-item nav-link"
+            >Physician</a
+          >
+          <a
+            id="nurses-link"
+            href="{% url 'nurses' %}"
+            class="nav-item nav-link"
+            >Nurse</a
+          >
+    
+          <a
+            id="contact-link"
+            href="{% url 'contact' %}"
+            class="nav-item nav-link"
+            >Support</a
+          >
+          {% if request.user.is_authenticated %}
+          <p
+            class="hide-on-lg-devices"
+            style="font-size: large; font-weight: semi-bold"
+          >
+            {{ request.user.first_name }}
+          </p>
+          <a
+            id="contact-link"
+            href="{% url 'logout_page'%}"
+            class="nav-item nav-link hide-on-lg-devices"
+            >Logout</a
+          >
+          {% else %}
+          <a
+            id="contact-link"
+            href="{% url 'login_page' %}"
+            class="nav-item nav-link hide-on-lg-devices"
+            >Login</a
+          >
+
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+<!-- Navbar End -->

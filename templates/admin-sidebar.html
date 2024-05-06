@@ -1,0 +1,29 @@
+{% load static %}
+<aside class="main-sidebar">
+      <ul class="sidebar-menu">
+        <li class="header">MAIN NAVIGATION</li>
+        <li>
+            <a href="{% url 'admin_page'%}">
+            <i class="fa fa-user-md"></i> <span>Hospitals</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'admin_nurse'%}">
+            <i class="fa fa-user-md"></i> <span>Nurses</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'admin_physician'%}">
+            <i class="fa fa-user-md"></i> <span>Physicians</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'admin_contact'%}">
+            <i class="fa fa-user-md"></i> <span>Support</span>
+            </a>
+        </li>
+     
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
